@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components'
 import Navbar from '../global/Navbar'
 import Footer from '../global/Footer'
@@ -70,7 +71,7 @@ display:flex;
 const ImageBtn = styled.button`
 flex:1;
 margin:2%;
-width:80px;
+width:100px;
 height:130px;
 background:transparent;
 border:none;
@@ -162,8 +163,9 @@ border-radius:10px;
 `
 
 const ProductDetails = () => {
-    const [url, setUrl] = useState(Image1);
-
+    const location = useLocation();
+    const item = location.state?.item;
+    const [url, setUrl] = useState(item.image);
     return (
         <>
             <MainContainer>
@@ -172,25 +174,25 @@ const ProductDetails = () => {
                 <Bubble zindex="-1" background="radial-gradient(#9186D7, #6D5FC1, #5A4EA8)" height="112px" width="112px" top="-2%" left="54%" />
 
                 <Navbar />
-                <Para style={{ paddingLeft: "5%" }}>marketplace / buy / Rosquillas</Para>
+                <Para style={{ paddingLeft: "5%" }}>marketplace / buy / {item.category}</Para>
                 <SubContainer>
                     <LeftContainer>
                         <Image src={url} />
                         <Gallery>
-                            <ImageBtn onClick={() => setUrl(Image2)}>
-                                <GalleryImage src={Image2} />
+                            <ImageBtn onClick={() => setUrl(item.image)}>
+                                <GalleryImage src={item.image}  alt='Loading...'/>
                             </ImageBtn>
-                            <ImageBtn onClick={() => setUrl(Image1)}>
-                                <GalleryImage src={Image1} />
+                            <ImageBtn onClick={() => setUrl(item.image2)}>
+                                <GalleryImage src={item.image2}  alt='Loading...'/>
                             </ImageBtn>
-                            <ImageBtn onClick={() => setUrl(Image3)}>
-                                <GalleryImage src={Image3} />
+                            <ImageBtn onClick={() => setUrl(item.image3)}>
+                                <GalleryImage src={item.image3}  alt='Loading...'/>
                             </ImageBtn>
                         </Gallery>
                     </LeftContainer>
 
                     <RightContainer>
-                        <H1>Rosquillas Caseras</H1>
+                        <H1>{item.title}</H1>
                         <Para style={{ paddingLeft: '10%', color: "#AEB0BC", display: 'flex', alignItems: "center" }}>By <Para style={{ color: "#5A4EA8", margin: "5px" }}> Rosquillas buen mar</Para></Para>
 
                         <StarsContainer>
@@ -202,13 +204,13 @@ const ProductDetails = () => {
                         </StarsContainer>
 
                         <PriceContainer>
-                            <Price style={{ borderRadius: "10px", color: "#5A4EA8", backgroundColor: "#EEEBFF", maxWidth: "150px", padding: "20px", margin: "20px 0", textAlign: "center" }}>$ 12.00</Price>
+                            <Price style={{ borderRadius: "10px", color: "#5A4EA8", backgroundColor: "#EEEBFF", maxWidth: "150px", padding: "20px", margin: "20px 0", textAlign: "center" }}>$ {item.price}</Price>
                             <Discount>
                                 <Price style={{ color: "#89BFA5" }}>Save 12%</Price>
                                 <Para fontsize="12px" fontweight="400">Includes all taxes</Para>
                             </Discount>
                         </PriceContainer>
-                        <Para fontsize="15px" fontweight="400" style={{ marginLeft: "10%" }}>Homemade Donuts, made by hand exported from southern Honduras, the bag has 12 delicious donuts to make donuts in honey</Para>
+                        <Para fontsize="15px" fontweight="400" style={{ marginLeft: "10%" }}>{item.description}</Para>
 
                         <LogoContainer>
                             <Logo>

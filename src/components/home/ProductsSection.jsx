@@ -5,6 +5,7 @@ import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOu
 import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined';
 import ControlPointOutlinedIcon from '@mui/icons-material/ControlPointOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { useNavigate } from 'react-router-dom';
 
 
 const CategorySection = styled.section`
@@ -69,7 +70,7 @@ background-color:white;
 `
 const Image = styled.img`
 width:100%;
-height:150px;
+height:200px;
 object-fit:cover;
 border-radius:20px;
 `
@@ -103,7 +104,7 @@ padding:10px;
 border-radius:10px;
 border:1px solid black;
 `
-const CartlBtn = styled.button`
+const CartBtn = styled.button`
 flex:1;
 border-radius:10px;
 border:1px solid black;
@@ -112,6 +113,7 @@ color:white;
 padding:3px
 `
 const ProductsSection = () => {
+    const navigate = useNavigate()
     const [products, setProducts] = useState(
         [
             {
@@ -370,6 +372,9 @@ const ProductsSection = () => {
         return str.slice(0, length - ending.length) + ending;
     }
 
+    const handleDetail = (item)=>{
+        navigate(`/productDetail/${item.id}` ,{state:{item}})
+    }
     return (
         <>
             <CategorySection>
@@ -409,8 +414,8 @@ const ProductsSection = () => {
                                 </Price>
                             </PriceContainer>
                             <DetailsContainer>
-                                <DetailBtn>More Details</DetailBtn>
-                                <CartlBtn><ShoppingCartOutlinedIcon /></CartlBtn>
+                                <DetailBtn onClick={()=>handleDetail(item)}>More Details</DetailBtn>
+                                <CartBtn><ShoppingCartOutlinedIcon /></CartBtn>
                             </DetailsContainer>
                         </Card>
                     )

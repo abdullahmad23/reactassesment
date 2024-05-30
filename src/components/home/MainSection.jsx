@@ -69,7 +69,7 @@ const MainSection = () => {
 
                 <ButtonWrapper>
                     <Input placeholder='Explore Marketplace'/>
-                    <Anchor as={NavLink} to="/productDetail">
+                    <Anchor as={NavLink} to="/">
                     <CartIcon>
                         <ShoppingCartOutlinedIcon style={{color:"#ECC444"}}/>
                     </CartIcon>

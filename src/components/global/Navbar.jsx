@@ -87,7 +87,7 @@ const Navbar = () => {
                         <Anchor as={NavLink} to="/">
                             <Li>home</Li>
                         </Anchor>
-                        <Anchor as={NavLink} to="/productDetail">
+                        <Anchor as={NavLink} to="/">
                             <Li>marketplace</Li>
                         </Anchor>
                         <Anchor as={NavLink} to="/">
@@ -117,7 +117,7 @@ const Navbar = () => {
                     <Anchor as={NavLink} to="/productDetail">
                         <NotificationsOutlinedIcon style={{color:"black"}} />
                     </Anchor>
-                    <Anchor as={NavLink} to="/productDetail">
+                    <Anchor as={NavLink} to="/login">
                         <PermIdentityIcon style={{color:"black"}} />
                     </Anchor>
                 </ActionContainer>
