@@ -3,9 +3,6 @@ import { useLocation } from 'react-router-dom';
 import styled from 'styled-components'
 import Navbar from '../global/Navbar'
 import Footer from '../global/Footer'
-import Image1 from "../../assests/rosquillas-hondurenas-de-queso 1.png"
-import Image2 from "../../assests/rosquillas.png"
-import Image3 from "../../assests/Rosquillas-olanchanas-1.png"
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import DeviceThermostatOutlinedIcon from '@mui/icons-material/DeviceThermostatOutlined';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
