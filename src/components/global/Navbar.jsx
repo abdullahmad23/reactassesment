@@ -6,6 +6,7 @@ import TranslateIcon from '@mui/icons-material/Translate';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import { NavLink } from 'react-router-dom';
 
 // main container and all child component css
 const MainContainer = styled.section`
@@ -33,6 +34,7 @@ align-items:center;
 const Li = styled.li`
 list-style:none;
 margin:10px;
+color:black;
 `
 
 // search container and all child component css
@@ -68,6 +70,10 @@ display:flex;
 align-items:center;
 justify-content:space-around;
 `
+const Anchor = styled.a`
+text-decoration:none;
+
+`
 const Navbar = () => {
     return (
         <>
@@ -78,28 +84,42 @@ const Navbar = () => {
 
                 <LinksContainer>
                     <Ul>
-                        <Li>home</Li>
-                        <Li>marketplace</Li>
-                        <Li>about us</Li>
-                        <Li>contact us</Li>
+                        <Anchor as={NavLink} to="/">
+                            <Li>home</Li>
+                        </Anchor>
+                        <Anchor as={NavLink} to="/productDetail">
+                            <Li>marketplace</Li>
+                        </Anchor>
+                        <Anchor as={NavLink} to="/">
+                            <Li>about us</Li>
+                        </Anchor>
+                        <Anchor as={NavLink} to="/">
+                            <Li>contact us</Li>
+                        </Anchor>
                     </Ul>
                 </LinksContainer>
 
                 <SearchContainer>
                     <SearchContainerWrapper>
                         <SearchBar type='text' placeholder='Search Here' />
-                        <SearchIcon/>
+                        <SearchIcon />
                     </SearchContainerWrapper>
                     <LanguageButton>
-                        <TranslateIcon/>
+                        <TranslateIcon />
                         ES
                     </LanguageButton>
                 </SearchContainer>
 
                 <ActionContainer>
-                    <ShoppingCartOutlinedIcon/>
-                    <NotificationsOutlinedIcon/>
-                    <PermIdentityIcon/>
+                    <Anchor as={NavLink} to="/productDetail">
+                        <ShoppingCartOutlinedIcon style={{color:"black"}} />
+                    </Anchor>
+                    <Anchor as={NavLink} to="/productDetail">
+                        <NotificationsOutlinedIcon style={{color:"black"}} />
+                    </Anchor>
+                    <Anchor as={NavLink} to="/productDetail">
+                        <PermIdentityIcon style={{color:"black"}} />
+                    </Anchor>
                 </ActionContainer>
             </MainContainer>
         </>

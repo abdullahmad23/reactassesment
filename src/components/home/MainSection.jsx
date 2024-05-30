@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { NavLink } from 'react-router-dom';
 
 
 const MainContainer = styled.section`
@@ -34,7 +35,6 @@ display:flex;
 justify-content:space-between;
 align-item:center;
 background-image: linear-gradient(to left,#76B6DA,#947E9C,#5243D6);
-color:#ECC444;
 padding:5px;
 border-radius:50px;
 `
@@ -56,6 +56,10 @@ display:flex;
 align-items:center;
 justify-content:center;
 `
+const Anchor = styled.a`
+text-decoration:none;
+
+`
 const MainSection = () => {
     return (
         <>
@@ -65,9 +69,11 @@ const MainSection = () => {
 
                 <ButtonWrapper>
                     <Input placeholder='Explore Marketplace'/>
+                    <Anchor as={NavLink} to="/productDetail">
                     <CartIcon>
-                        <ShoppingCartOutlinedIcon />
+                        <ShoppingCartOutlinedIcon style={{color:"#ECC444"}}/>
                     </CartIcon>
+                    </Anchor>
                 </ButtonWrapper>
             </MainContainer>
         </>

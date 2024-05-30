@@ -25,6 +25,7 @@ justify-content:end;
 const Wrapper = styled.section`
 display:flex;
 align-items:center;
+flex-wrap:wrap;
 padding:0 10%;
 `
 const DetailCard = styled.section`
@@ -67,11 +68,6 @@ text-align:center;
 padding-bottom:10px;
 color:white;
 opacity:50%;
-`
-const Ul =styled.ul`
-marign:0;
-`
-const Li =styled.li`
 `
 const Footer = () => {
     return (
