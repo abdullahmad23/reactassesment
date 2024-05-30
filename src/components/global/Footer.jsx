@@ -8,6 +8,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 const MainContainer = styled.section`
 background-color:#303137;
 position:relative;
+margin-top:5%;
 `
 const Line= styled.section`
 position:absolute;
@@ -21,16 +22,26 @@ const LogoContainer = styled.section`
 display:flex;
 padding:5% 4% 0 4%;
 justify-content:end;
+@media (max-width: 500px) {
+    width:90%;
+    padding:15% 4% 0 4%;
+   }
 `
 const Wrapper = styled.section`
 display:flex;
 align-items:center;
 flex-wrap:wrap;
 padding:0 10%;
+@media (max-width: 500px) {
+   flex-direction:column;
+  }
 `
 const DetailCard = styled.section`
 flex:1;
 height:100%;
+@media (max-width: 700px) {
+    width:100%;
+  }
 `
 const H3 = styled.h3`
 border-bottom:2px solid white;
@@ -54,6 +65,11 @@ font-weight:100;
 `
 const ImageContainer = styled.section`
 flex:1;
+@media (max-width: 700px) {
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
 `
 const Image = styled.img`
 width:300px;

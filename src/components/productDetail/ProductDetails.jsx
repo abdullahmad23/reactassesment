@@ -40,11 +40,16 @@ const MainContainer = styled.section`
 position:relative;
 z-index:1;
 background:#F8F8F8;
+overflow-y:hidden;
 `
 const Para = styled.p`
 font-size:${props => props.fontsize};
 font-weight:${props => props.fontweight};
 color:${props => props.color};
+margin-left:${props=>props.marginleft};
+@media (max-width: 758px) {
+    margin-left:0%;
+}
 `
 const SubContainer = styled.section`
 padding:1% 5%;
@@ -59,9 +64,17 @@ flex:1;
 const Image = styled.img`
 width:100%;
 height:500px;
-min-width:500px;
 object-fit:cover;
 border-radius:20px;
+@media (max-width: 600px) {
+height:400px;
+}
+@media (max-width: 500px) {
+    height:350px;
+}
+@media (max-width: 400px) {
+    height:300px;
+}
 `
 const Gallery = styled.section`
 height:30%
@@ -92,15 +105,30 @@ const H1 = styled.h1`
 font-size:50px;
 margin:0;
 padding-left:10%;
+@media (max-width: 758px) {
+    padding-left:0%;
+}
+@media (max-width: 600px) {
+    font-size:40px;
+}
+@media (max-width: 400px) {
+    font-size:30px;
+}
 `
 const StarsContainer = styled.section`
 display:flex;
 padding-left:10%;
+@media (max-width: 758px) {
+    padding-left:0%;
+}
 `
 const PriceContainer = styled.section`
 display:flex;
 align-items:center;
 padding-left:10%;
+@media (max-width: 758px) {
+    padding-left:0%;
+}
 `
 const Price = styled.h2`
 margin:0;
@@ -119,6 +147,9 @@ gap:30px;
 border-top:1px solid black;
 border-bottom:1px solid black;
 padding:3% 0;
+@media (max-width: 758px) {
+    margin-left:0%;
+}
 `
 const Logo = styled.section`
 display:flex;
@@ -136,6 +167,9 @@ display:flex;
 gap:30px;
 margin-top:5%;
 margin-bottom:20%;
+@media (max-width: 758px) {
+    margin-left:0%;
+}
 `
 const QuantityBtn = styled.button`
 display:flex;
@@ -166,10 +200,11 @@ const ProductDetails = () => {
     const location = useLocation();
     const item = location.state?.item;
     const [url, setUrl] = useState(item.image);
+    
     return (
         <>
             <MainContainer>
-                <Bubble zindex="1" background="radial-gradient(#F4DB8A, #ECC444, #B08F23)" height="107px" width="107px" top="55%" left="85%" />
+                <Bubble zindex="-1" background="radial-gradient(#F4DB8A, #ECC444, #B08F23)" height="107px" width="107px" top="55%" left="85%" />
                 <BubbleWhite height="266px" width="266px" top="2%" left="40%" />
                 <Bubble zindex="-1" background="radial-gradient(#9186D7, #6D5FC1, #5A4EA8)" height="112px" width="112px" top="-2%" left="54%" />
 
@@ -210,7 +245,7 @@ const ProductDetails = () => {
                                 <Para fontsize="12px" fontweight="400">Includes all taxes</Para>
                             </Discount>
                         </PriceContainer>
-                        <Para fontsize="15px" fontweight="400" style={{ marginLeft: "10%" }}>{item.description}</Para>
+                        <Para fontsize="15px" fontweight="400" marginleft= "10%">{item.description}</Para>
 
                         <LogoContainer>
                             <Logo>

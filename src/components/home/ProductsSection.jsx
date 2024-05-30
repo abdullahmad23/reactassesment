@@ -14,6 +14,10 @@ justify-content:space-between;
 align-item:center;
 padding-left:5%;
 margin-bottom:10px;
+flex-wrap:wrap;
+@media (max-width: 900px) {
+    flex-direction:column;
+}
 `
 const CatLeft = styled.section`
 flex:1;
@@ -32,10 +36,13 @@ flex:1;
 display:flex;
 justify-content:space-between;
 align-item:flex-end;
+@media (max-width: 500px) {
+    flex-direction:column;
+    padding:5% 0;
+}
 `
 const CatRightBtn = styled.section`
 flex:3;
-dmargin:auto;
 `
 const Btn = styled.button`
 padding:10px 20px;
@@ -45,6 +52,9 @@ color:${props => props.color};
 border-width:${props => props.color === "white" ? "0px" : "1px"};
 background-color:${props => props.bg};
 font-weight:600;
+@media (max-width: 900px) {
+    padding:10px 15px;
+}
 `
 const CatAction = styled.section`
 flex:1;
@@ -67,6 +77,18 @@ min-width:20%;
 margin:10px;
 padding:10px;
 background-color:white;
+@media (max-width: 900px) {
+    min-width:30%;
+}
+@media (max-width: 700px) {
+    min-width:40%;
+}
+@media (max-width: 500px) {
+    min-width:70%;
+}
+@media (max-width: 300px) {
+    min-width:90%;
+}
 `
 const Image = styled.img`
 width:100%;

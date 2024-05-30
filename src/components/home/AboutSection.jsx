@@ -8,9 +8,11 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:3% 10%;
+flex-wrap:wrap;
 `
 const LeftContainer = styled.section`
 flex:2;
+min-width:300px;
 `
 const H1 =styled.h1`
 margin:0;
@@ -22,6 +24,9 @@ background-clip: text;
 -webkit-text-fill-color: transparent;
 text-align:${props=>props.textalign};
 font-family: "Titan One", sans-serif;
+@media (max-width: 500px) {
+  font-size:50px;
+}
 `
 const Para = styled.p`
 padding-right:20%;

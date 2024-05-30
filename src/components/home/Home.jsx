@@ -41,11 +41,11 @@ const Home = () => {
   return (
     <div>
       <MainContainer>
-        <Bubble zindex="1" background="radial-gradient(#F4DB8A, #ECC444, #B08F23)" height="107px" width="107px" top="9%" left="85%" />
+        <Bubble zindex="-1" background="radial-gradient(#F4DB8A, #ECC444, #B08F23)" height="107px" width="107px" top="9%" left="85%" />
         <Bubble zindex="-1" background="radial-gradient(#F4DB8A, #ECC444, #B08F23)" height="107px" width="107px" top="13%" left="13%" />
         <Bubble zindex="-1" background="radial-gradient(#9186D7, #6D5FC1, #5A4EA8)" height="112px" width="112px" top="-2%" left="71%" />
-        <Bubble zindex="1" background="radial-gradient(#9186D7, #6D5FC1, #5A4EA8)" height="71px" width="71px" top="14%" left="80%" />
-        <Bubble zindex="1" background="radial-gradient(#8DC6E7, #76B6DA, #5187A6)" height="54px" width="54px" top="7%" left="1%" />
+        <Bubble zindex="-1" background="radial-gradient(#9186D7, #6D5FC1, #5A4EA8)" height="71px" width="71px" top="14%" left="80%" />
+        <Bubble zindex="-1" background="radial-gradient(#8DC6E7, #76B6DA, #5187A6)" height="54px" width="54px" top="7%" left="1%" />
 
         <BubbleWhite height="509px" width="509px" top="3%" left="10%" />
         <BubbleWhite height="358px" width="358px" top="7%" left="11%" />
@@ -54,12 +54,12 @@ const Home = () => {
 
 
         <BubbleWhite height="509px" width="509px" top="33%" left="60%" />
-        <Bubble zindex="1" background="radial-gradient(#8DC6E7, #76B6DA, #5187A6)" height="100px" width="100px" top="38%" left="56%" />
+        <Bubble zindex="-1" background="radial-gradient(#8DC6E7, #76B6DA, #5187A6)" height="100px" width="100px" top="38%" left="56%" />
         <Bubble zindex="-1" background="radial-gradient(#9186D7, #6D5FC1, #5A4EA8)" height="40px" width="40px" top="50%" left="85%" />
         <Bubble zindex="-1" background="radial-gradient(#F4DB8A, #ECC444, #B08F23)" height="107px" width="107px" top="45%" left="88%" />
 
         <BubbleWhite height="509px" width="509px" top="35%" left="2%" />
-        <Bubble zindex="1" background="radial-gradient(#8DC6E7, #76B6DA, #5187A6)" height="63px" width="63px" top="47%" left="4%" />
+        <Bubble zindex="-1" background="radial-gradient(#8DC6E7, #76B6DA, #5187A6)" height="63px" width="63px" top="47%" left="4%" />
 
         <Navbar />
         <MainSection />

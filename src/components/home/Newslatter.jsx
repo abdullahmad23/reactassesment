@@ -10,6 +10,7 @@ align-items;center;
 margin:5% 5%;
 background-color:#3D447A;
 border-radius:20px;
+flex-wrap:wrap;
 `
 const LeftContainer =styled.section`
 display:flex;
@@ -25,7 +26,9 @@ object-fit:contain;
 const RightContainer = styled.section`
 padding:0 10%;
 flex:1;
-`
+@media (max-width: 887px) {
+  padding:10% 10%;
+}`
 const H1 = styled.h1`
 font-size:30px;
 font-weight:500;
@@ -42,7 +45,6 @@ const ButtonContainer = styled.section`
 display:flex;
 justify-content:space-around;
 align-items:center;
-width:50%;
 background-image:linear-gradient(to right, #76B6DA,#947E9C,#8D86CF);
 border-radius:20px;
 `

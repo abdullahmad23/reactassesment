@@ -111,7 +111,7 @@ const Navbar = () => {
                 </SearchContainer>
 
                 <ActionContainer>
-                    <Anchor as={NavLink} to="/productDetail">
+                    <Anchor as={NavLink} to="/cart">
                         <ShoppingCartOutlinedIcon style={{color:"black"}} />
                     </Anchor>
                     <Anchor as={NavLink} to="/productDetail">

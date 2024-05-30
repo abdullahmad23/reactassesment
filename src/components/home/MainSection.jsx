@@ -22,12 +22,24 @@ background-clip: text;
 -webkit-text-fill-color: transparent;
 font-family: "Titan One", sans-serif;
 z-index:1;
+@media (max-width: 900px) {
+    font-size:50px;
+   }
+   @media (max-width: 500px) {
+    font-size:40px;
+   }
 `
 const Para = styled.p`
 font-size:20px;
 font-weight:400;
 text-align:center;
 padding:0 14%;
+@media (max-width: 900px) {
+    font-size:15px;
+   }
+   @media (max-width: 500px) {
+    font-size:10px;
+   }
 `
 const ButtonWrapper = styled.section`
 width:25%;
@@ -37,6 +49,21 @@ align-item:center;
 background-image: linear-gradient(to left,#76B6DA,#947E9C,#5243D6);
 padding:5px;
 border-radius:50px;
+@media (max-width: 1180px) {
+    width:30%;
+}
+@media (max-width: 1000px) {
+    width:40%;
+}
+@media (max-width: 900px) {
+    width:50%;
+}
+@media (max-width: 500px) {
+    width:60%;
+}
+@media (max-width: 400px) {
+    width:90%;
+}
 `
 const Input = styled.input`
 background:transparent;
@@ -45,6 +72,9 @@ color:white;
 &::placeholder{
     color:white;
     font-weight:bold;
+}
+@media (max-width: 1000px) {
+    font-size:10px;
 }
 `
 const CartIcon = styled.aside`
@@ -68,11 +98,11 @@ const MainSection = () => {
                 <Para>You can now buy your 100% Honduran products with us and we will send them to the door of your house anywhere in the United States.</Para>
 
                 <ButtonWrapper>
-                    <Input placeholder='Explore Marketplace'/>
+                    <Input placeholder='Explore Marketplace' />
                     <Anchor as={NavLink} to="/">
-                    <CartIcon>
-                        <ShoppingCartOutlinedIcon style={{color:"#ECC444"}}/>
-                    </CartIcon>
+                        <CartIcon>
+                            <ShoppingCartOutlinedIcon style={{ color: "#ECC444" }} />
+                        </CartIcon>
                     </Anchor>
                 </ButtonWrapper>
             </MainContainer>

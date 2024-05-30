@@ -10,12 +10,17 @@ justify-content:space-around;
 align-items;center;
 padding:5% 10%;
 gap:5%;
+flex-wrap:wrap;
 `
 const Cards = styled.section`
-width:300px;
+flex:1;
+min-width:200px;
 height:200px;
 background:${props => props.bg};
 padding:20px;
+@media (max-width: 500px) {
+    margin:2% 0;
+  }
 `
 const LogoContainer = styled.section`
 display:flex;
