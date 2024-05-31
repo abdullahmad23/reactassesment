@@ -55,7 +55,12 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:flex-start;
-min-width:500px;
+min-width:250px;
+@media (max-width: 766px) {
+    width:100%;
+    justify-content:center;
+    align-items:center;
+}
 `
 const Label = styled.label`
 width:80%;
